@@ -6,9 +6,21 @@ public class ArithmeticOperatorStudy {
     public static void main(String[] args) {
         ArithmeticOperatorStudy arithmeticOperatorStudy = new ArithmeticOperatorStudy();
 
+        arithmeticOperatorStudy.preIncrement();
         arithmeticOperatorStudy.byteAndShort();
         arithmeticOperatorStudy.byteAndFloat();
         arithmeticOperatorStudy.division();
+    }
+
+    /**
+     * ++i 와 i=i+1 의 비교로 바이트코드를 확인해보면 ++i 가 더 적은 명령만으로 수행하기 때문에 더 빠르다
+     * */
+    private void preIncrement() {
+        int normalIncrement = 0;
+        int preIncrement = 0;
+
+        System.out.println(normalIncrement + 1);
+        System.out.println(++preIncrement);
     }
 
     /**
@@ -20,9 +32,9 @@ public class ArithmeticOperatorStudy {
 
         Object result = byteOperand + shortOperand;
 
-        System.out.println("result is Byte: " + Byte.class.isInstance(result));
-        System.out.println("result is Short: " + Short.class.isInstance(result));
-        System.out.println("result is Integer: " + Integer.class.isInstance(result));
+        System.out.println("result is Byte: " + (result instanceof Byte));
+        System.out.println("result is Short: " + (result instanceof Short));
+        System.out.println("result is Integer: " + (result instanceof Integer));
     }
 
     /**
@@ -34,10 +46,10 @@ public class ArithmeticOperatorStudy {
 
         Object result = byteOperand + floatOperand;
 
-        System.out.println("result is Byte: " + Byte.class.isInstance(result));
-        System.out.println("result is Short: " + Short.class.isInstance(result));
-        System.out.println("result is Integer: " + Integer.class.isInstance(result));
-        System.out.println("result is Float: " + Float.class.isInstance(result));
+        System.out.println("result is Byte: " + (result instanceof Byte));
+        System.out.println("result is Short: " + (result instanceof Short));
+        System.out.println("result is Integer: " + (result instanceof Integer));
+        System.out.println("result is Float: " + (result instanceof Float));
     }
 
     /**

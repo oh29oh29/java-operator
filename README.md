@@ -40,9 +40,9 @@ public class ArithmeticOperatorStudy {
 
         Object result = byteOperand + shortOperand;
 
-        System.out.println("result is Byte: " + Byte.class.isInstance(result));
-        System.out.println("result is Short: " + Short.class.isInstance(result));
-        System.out.println("result is Integer: " + Integer.class.isInstance(result));
+        System.out.println("result is Byte: " + (result instanceof Byte)));
+        System.out.println("result is Short: " + (result instanceof Short));
+        System.out.println("result is Integer: " + (result instanceof Integer));
     }
 }
 ```
@@ -60,10 +60,10 @@ public class ArithmeticOperatorStudy {
 
         Object result = byteOperand + floatOperand;
 
-        System.out.println("result is Byte: " + Byte.class.isInstance(result));
-        System.out.println("result is Short: " + Short.class.isInstance(result));
-        System.out.println("result is Integer: " + Integer.class.isInstance(result));
-        System.out.println("result is Float: " + Float.class.isInstance(result));
+        System.out.println("result is Byte: " + (result instanceof Byte));
+        System.out.println("result is Short: " + (result instanceof Short));
+        System.out.println("result is Integer: " + (result instanceof Integer));
+        System.out.println("result is Float: " + (result instanceof Float));
     }
 }
 ```
@@ -99,7 +99,24 @@ public class ArithmeticOperatorStudy {
   
 - Pre-increment  
 해당 명령문이 실행될 때 피연산자의 값이 즉시 증가한다.  
-  
+
+  - ++i 와 i=i+1 의 비교  
+  '++i' 와 'i=i+1' 의 결과는 서로 같지만 실제로 연산이 수행되는 과정은 다르다.  
+  '++i' 가 'i=i+1' 보다 더 적은 명령만으로 연산을 수행하기 때문에 더 빠르다.  
+    ```java
+    public static void main(String[] args) {
+        int i = 0;
+        i = i + 1;
+    }
+    ```
+    ![i=i+1](images/IMG_arithmetic_04.png)
+    ```java
+    public static void main(String[] args) {
+        int i = 0;
+        ++i;
+    }
+    ```
+    ![++i](images/IMG_arithmetic_05.png)  
 #### Decrement `--`
 
 단항 연산자이며 피연산자의 정수 값을 감소시키는 데 사용된다.
@@ -119,3 +136,6 @@ public class ArithmeticOperatorStudy {
 > 웹 문서
 > - [geeksforgeeks | Operators in Java](https://www.geeksforgeeks.org/operators-in-java/)
 > - [geeksforgeeks | Java Arithmetic Operators with Examples](https://www.geeksforgeeks.org/java-arithmetic-operators-with-examples/)
+> 
+> 도서
+> - JAVA의 정석(2ND EDITION) 중 '3장 연산자'
