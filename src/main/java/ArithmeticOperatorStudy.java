@@ -9,7 +9,14 @@ public class ArithmeticOperatorStudy {
         arithmeticOperatorStudy.preIncrement();
         arithmeticOperatorStudy.byteAndShort();
         arithmeticOperatorStudy.byteAndFloat();
-        arithmeticOperatorStudy.division();
+
+        try {
+            arithmeticOperatorStudy.division();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        arithmeticOperatorStudy.중간값_구하기();
     }
 
     /**
@@ -61,5 +68,19 @@ public class ArithmeticOperatorStudy {
 
         int result = dividend / divisor;
         System.out.println(result);
+    }
+
+    private void 중간값_구하기() {
+        int begin = 2_100_000_000;
+        int end = 2_000_000_000;
+
+        int result = (begin + end) / 2;
+        System.out.println("잘못된 중간값 구하기: " + result);
+
+        int result2 = begin + (end - begin) / 2;
+        System.out.println("올바른 중간값 구하기 1: " + result2);
+
+        int result3 = (begin + end) >>> 1;
+        System.out.println("올바른 중간값 구하기 2: " + result3);
     }
 }
