@@ -184,6 +184,42 @@ a = 5 = 0101
    ~a = 1010 = 10
 ```
 
+## 관계 연산자, Relational Operators
+
+관계 연산자는 같음, 보다 큼, 보다 작음 등 두 피연산자 간의 관계를 확인하는 데 사용된다.  
+비교 후 boolean 결과를 반환한다.  
+
+#### Equal to `==`
+
+두 피연산자가 같은지 확인하는데 사용된다.  
+두 피연산자가 같으면 true 를 반환하고, 다르면 false 를 반환한다.  
+
+#### Not equal to `!=`
+
+두 피연산자가 다른지 확인하는데 사용된다.
+두 피연산자가 다르면 true 를 반환하고, 같으면 false 를 반환한다.
+
+#### Greater than `>`
+
+첫 번째 피연산자가 두 번째 피연산자보다 큰지 확인하는데 사용된다.  
+첫 번째 피연산자가 더 크다면 true 를 반환하고, 두 번째 피연산자가 더 크다면 false 를 반환한다.
+
+#### Less than `<`
+
+첫 번째 피연산자가 두 번째 피연산자보다 작은지 확인하는데 사용된다.  
+첫 번째 피연산자가 더 작다면 true 를 반환하고, 두 번째 피연산자가 더 작다면 false 를 반환한다.
+
+#### Greater than or equal to `>=`
+
+첫 번째 피연산자가 두 번째 피연산자보다 크거나 같은지 확인하는데 사용된다.  
+첫 번째 피연산자가 더 크거나 같다면 true 를 반환하고, 두 번째 피연산자가 더 크다면 false 를 반환한다.
+
+#### Less than or equal to `<=`
+
+첫 번째 피연산자가 두 번째 피연산자보다 작거나 같은지 확인하는데 사용된다.  
+첫 번째 피연산자가 더 작거나 같다면 true 를 반환하고, 두 번째 피연산자가 더 작다면 false 를 반환한다.
+
+
 #### 두 정수의 중간값 구하기
 
 두 정수 begin, end 가 있다고 할 때, 보통 중간값을 구하려고 (begin + end) / 2 를 사용하여 구한다.  
@@ -220,6 +256,7 @@ public class ArithmeticOperatorStudy {
 > - [geeksforgeeks | Operators in Java](https://www.geeksforgeeks.org/operators-in-java/)
 > - [geeksforgeeks | Java Arithmetic Operators with Examples](https://www.geeksforgeeks.org/java-arithmetic-operators-with-examples/)
 > - [geeksforgeeks | Bitwise operators in Java](https://www.geeksforgeeks.org/bitwise-operators-in-java/)
+> - [geeksforgeeks | Java Relational Operators with Examples](https://www.geeksforgeeks.org/java-relational-operators-with-examples/)
 >
 > 도서
 > - JAVA의 정석(2ND EDITION) 중 '3장 연산자'
