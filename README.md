@@ -184,6 +184,68 @@ a = 5 = 0101
    ~a = 1010 = 10
 ```
 
+## 쉬프트 연산자, Shift Operators
+
+숫자의 비트를 왼쪽 또는 오른쪽으로 이동하여 숫자를 각각 2로 곱하거나 나누는 데 사용된다.  
+
+#### Signed Right shift `>>`
+
+숫자의 비트를 오른쪽으로 이동하고 왼쪽 공백을 부호 비트(음수의 경우 1, 양수의 경우 0)로 채운다.  
+
+```java
+public class ShiftOperatorStudy {
+
+    public static void main(String[] args) {
+        int operand = 10;
+        System.out.println(operand >> 1);   // 5
+        System.out.println(operand >> 2);   // 2
+    }
+}
+```
+
+10의 비트는 0000 1010 이며, >> 1 을 하게 되면 오른쪽으로 한 번만 이동하되 왼쪽 공백은 부호비트 0 으로 채우게 된다.  
+따라서 10 >> 1 의 값은 0000 0101 이며 정수로는 5 가 된다.
+
+#### Unsigned Right shift `>>>`
+
+숫자의 비트를 오른쪽으로 이동하고 왼쪽 공백은 0 으로 채운다.  
+부호없는 쉬프트 연산이다.  
+
+양수인 경우는, Signed right shift 결과와 동일하지만 음수인 경우는 부호비트를 보존하지 않기 때문에 다른 결과가 나온다.  
+
+```java
+public class ShiftOperatorStudy {
+
+    public static void main(String[] args) {
+        int operand = -10;
+        System.out.println(operand >>> 1);  // 2147483643
+        System.out.println(operand >>> 2);  // 1073741821
+    }
+}
+```
+
+#### Left shift `<<`
+
+숫자의 비트를 왼쪽으로 이동하고 오른쪽 공백은 0 으로 채운다.
+
+```java
+public class ShiftOperatorStudy {
+
+    public static void main(String[] args) {
+        int operand = 10;
+        System.out.println(operand << 1);   // 20
+        System.out.println(operand << 2);   // 40
+    }
+}
+```
+
+10의 비트는 0000 1010 이며, << 1 를 하게 되면 왼쪽으로 한 번만 이동하되 오른쪽 공백은 0 으로 채우게 된다.  
+따라서 10 << 1 의 값은 0001 0100 이며 정수로는 20 이 된다.
+
+#### Unsigned Left shift `<<<`
+
+부호없는 오른쪽 쉬프트와 달리 << 와 <<< 연산은 동일하기 때문에 별도의 <<< 연산자는 존재하지 않는다.
+
 ## 관계 연산자, Relational Operators
 
 관계 연산자는 같음, 보다 큼, 보다 작음 등 두 피연산자 간의 관계를 확인하는 데 사용된다.  
@@ -218,6 +280,89 @@ a = 5 = 0101
 
 첫 번째 피연산자가 두 번째 피연산자보다 작거나 같은지 확인하는데 사용된다.  
 첫 번째 피연산자가 더 작거나 같다면 true 를 반환하고, 두 번째 피연산자가 더 작다면 false 를 반환한다.
+
+## 논리 연산자, Logical Operators
+
+논리 연산자는 논리적 "AND", "OR" 및 "NOT" 작업을 수행하는 데 사용된다.  
+한 가지 명심해야 할 점은 첫 번째 조건이 거짓이면 두 번째 조건은 확인하지 않는다는 것입니다. 즉, 단락 효과가 있습니다.
+
+#### 논리적 AND `&&`
+
+고려중인 두 조건이 모두 true 일 때 결과는 true 를 반환한다.  
+만약 두 조건 중 하나라도 false 라면 결과는 false 를 반환한다.  
+
+#### 논리적 OR `||`
+
+고려중인 두 조건 중 하나라도 true 일 때 결과는 true 를 반환한다.  
+만약 두 조건 모두 false 라면 결과는 false 를 반환한다.  
+
+#### 논리적 NOT `!`
+
+이전 두 논리 연산자와 달리 단항 연산자이며 고려중인 조건이 false 라면 true 를, true 라면 false 를 반환한다.
+
+## instanceof
+
+instanceof 는 참조 변수가 주어진 유형의 객체 참조를 포함하는지 확인하는 데 사용되는 키워드이다.  
+
+```java
+class Parent {}
+class Child extends Parent {}
+
+public class InstanceofStudy {
+
+    public static void main(String[] args) {
+        Parent parent = new Parent();
+        Child child = new Child();
+
+        System.out.println("child is instance of Child: " + (child instanceof Child));
+        System.out.println("child is instance of Parent: " + (child instanceof Parent));
+        System.out.println("child is instance of Object: " + (child instanceof Object));
+
+        System.out.println("parent is instance of Child: " + (parent instanceof Child));
+        System.out.println("parent is instance of Parent: " + (parent instanceof Parent));
+        System.out.println("parent is instance of Object: " + (parent instanceof Object));
+    }
+}
+```
+
+![instanceof](images/IMG_instanceof_01.png)
+
+## Assignment Operator
+
+변수에 값을 할당하는 데 사용된다.  
+오른쪽에 있는 값은 왼쪽에 있는 변수의 데이터 유형과 같아야 한다. 그렇지 않으면 컴파일러에서 오류가 발생한다.  
+
+#### `=`
+
+오른쪽의 값을 왼쪽의 변수에 할당하는 데 사용되는 가장 간단한 연산자이다.
+
+#### `+=`
+
+`+` 연산자와 `=` 연산자의 복합이다.  
+왼쪽에 있는 변수의 현재 값을 오른쪽에 있는 값과 더한 다음 결과를 왼쪽 변수에 할당한다.  
+
+#### `-=`
+
+`-` 연산자와 `=` 연산자의 복합이다.  
+왼쪽에 있는 변수의 현재 값을 오른쪽에 있는 값으로 뺀 다음 결과를 왼쪽 변수에 할당한다.
+
+#### `*=`
+
+`*` 연산자와 `=` 연산자의 복합이다.  
+왼쪽에 있는 변수의 현재 값을 오른쪽에 있는 값으로 곱한 다음 결과를 왼쪽 변수에 할당한다.
+
+#### `/=`
+
+`*` 연산자와 `=` 연산자의 복합이다.  
+왼쪽에 있는 변수의 현재 값을 오른쪽에 있는 값으로 나눈 다음 결과를 왼쪽 변수에 할당한다.
+
+#### `%=`
+
+`%` 연산자와 `=` 연산자의 복합이다.  
+왼쪽에 있는 변수의 현재 값을 오른쪽에 있는 값으로 나눈 다음 나머지 결과를 왼쪽 변수에 할당한다.
+
+
+
 
 
 #### 두 정수의 중간값 구하기
@@ -257,6 +402,8 @@ public class ArithmeticOperatorStudy {
 > - [geeksforgeeks | Java Arithmetic Operators with Examples](https://www.geeksforgeeks.org/java-arithmetic-operators-with-examples/)
 > - [geeksforgeeks | Bitwise operators in Java](https://www.geeksforgeeks.org/bitwise-operators-in-java/)
 > - [geeksforgeeks | Java Relational Operators with Examples](https://www.geeksforgeeks.org/java-relational-operators-with-examples/)
+> - [geeksforgeeks | Java Logical Operators with Examples](https://www.geeksforgeeks.org/java-logical-operators-with-examples/)
+> - [geeksforgeeks | Java instanceof and its applications](https://www.geeksforgeeks.org/java-instanceof-and-its-applications/)
 >
 > 도서
 > - JAVA의 정석(2ND EDITION) 중 '3장 연산자'
