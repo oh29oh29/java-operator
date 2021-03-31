@@ -361,7 +361,58 @@ public class InstanceofStudy {
 `%` 연산자와 `=` 연산자의 복합이다.  
 왼쪽에 있는 변수의 현재 값을 오른쪽에 있는 값으로 나눈 다음 나머지 결과를 왼쪽 변수에 할당한다.
 
+## 화살표(->) 연산자
 
+자바 8 부터 지원되는 Lambda Expression(람다 표현식)에서 사용되는 연산자이다.  
+메서드 파라미터, 연산자, 코드 블럭 순으로 구성된다.  
+
+관련하여 더 자세한 내용은 자바 람다식에서 다룰 예정이다.
+
+## 3항 연산자, Condition Operator
+
+if ~ else 문을 연산자로 표현할 수 있고 조건에 따라 결과를 반환하다.  
+형태는 조건 ? (true 일 경우 실행) : (false 일 경우 실행) 과 같다.  
+
+```java
+public class ConditionOperatorStudy {
+
+    public static void main(String[] args) {
+        int random = ThreadLocalRandom.current().nextInt();
+        String result1;
+
+        if (random > 10) result1 = "if true";
+        else result1 = "else";
+        System.out.println("if else 문 결과: " + result1);
+
+        String result2 = random > 10 ? "조건문 true" : "조건문 false";
+        System.out.println("3항 연산자 결과: " + result2);
+    }
+}
+```
+
+## 연산자 우선순위
+
+<html>
+    <table>
+        <thead>
+            <th>우선순위</th><th>연산자</th><th>설명</th>
+        </thead>
+        <tbody>
+            <tr><td rowspan="3">1</td><td>()</td><td>Parentheses</td></tr>
+            <tr><td>[]</td><td>Array subscript</td></tr>
+            <tr><td>.</td><td>Member selection</td></tr>
+            <tr><td rowspan="2">2</td><td>++</td><td>Unary post-increment</td></tr>
+            <tr><td>--</td><td>Unary post-decrement</td></tr>
+            <tr><td rowspan="7">3</td><td>++</td><td>Unary pre-increment</td></tr>
+            <tr><td>--</td><td>Unary pre-decrement</td></tr>
+            <tr><td>+</td><td>Unary plus</td></tr>
+            <tr><td>-</td><td>Unary minus</td></tr>
+            <tr><td>!</td><td>Unary logical negation</td></tr>
+            <tr><td>~</td><td>Unary bitwise complement</td></tr>
+            <tr><td>(type)</td><td>Unary type cast</td></tr>
+        </tbody>
+    </table>
+</html>
 
 
 
@@ -404,6 +455,9 @@ public class ArithmeticOperatorStudy {
 > - [geeksforgeeks | Java Relational Operators with Examples](https://www.geeksforgeeks.org/java-relational-operators-with-examples/)
 > - [geeksforgeeks | Java Logical Operators with Examples](https://www.geeksforgeeks.org/java-logical-operators-with-examples/)
 > - [geeksforgeeks | Java instanceof and its applications](https://www.geeksforgeeks.org/java-instanceof-and-its-applications/)
+> - [개발매발 | 3주차 과제: 연산자](https://blog.baesangwoo.dev/posts/java-livestudy-3week/)
+> - [1의 보수와 2의 보수](https://n수db796.tistory.com/4)
+> - [Java Operator Precedence Table](http://www.cs.bilkent.edu.tr/~guvenir/courses/CS101/op_precedence.html)
 >
 > 도서
 > - JAVA의 정석(2ND EDITION) 중 '3장 연산자'
