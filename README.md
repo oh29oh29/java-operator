@@ -410,11 +410,47 @@ public class ConditionOperatorStudy {
             <tr><td>!</td><td>Unary logical negation</td></tr>
             <tr><td>~</td><td>Unary bitwise complement</td></tr>
             <tr><td>(type)</td><td>Unary type cast</td></tr>
+            <tr><td rowspan="3">4</td><td>*</td><td>Multiplication</td></tr>
+            <tr><td>/</td><td>Division</td></tr>
+            <tr><td>%</td><td>Modulus</td></tr>
+            <tr><td rowspan="2">5</td><td>+</td><td>Addition</td></tr>
+            <tr><td>-</td><td>Subtraction</td></tr>
+            <tr><td rowspan="3">6</td><td><<</td><td>Bitwise left shift</td></tr>
+            <tr><td>>></td><td>Bitwise right shift with sign extension</td></tr>
+            <tr><td>>>></td><td>Bitwise right shift with zero extension</td></tr>
+            <tr><td rowspan="5">7</td><td><</td><td>Relational less than</td></tr>
+            <tr><td><=</td><td>Relational less than or equal</td></tr>
+            <tr><td>></td><td>Relational greater than</td></tr>
+            <tr><td>>=</td><td>Relational greater than or equal</td></tr>
+            <tr><td>instanceof</td><td>Type comparison (objects only)</td></tr>
+            <tr><td rowspan="2">8</td><td>==</td><td>Relational is equal to</td></tr>
+            <tr><td>!=</td><td>Relational is not equal to</td></tr>
+            <tr><td>9</td><td>&</td><td>Bitwise AND</td></tr>
+            <tr><td>10</td><td>^</td><td>Bitwise Exclusive OR</td></tr>
+            <tr><td>11</td><td>|</td><td>Bitwise Inclusive OR</td></tr>
+            <tr><td>12</td><td>&&</td><td>Logical AND</td></tr>
+            <tr><td>13</td><td>||</td><td>Logical OR</td></tr>
+            <tr><td>14</td><td>? :</td><td>Ternary conditional</td></tr>
+            <tr><td rowspan="6">15</td><td>=</td><td>Assignment</td></tr>
+            <tr><td>+=</td><td>Addition assignment</td></tr>
+            <tr><td>-=</td><td>Subtraction assignment</td></tr>
+            <tr><td>*=</td><td>Multiplication assignment</td></tr>
+            <tr><td>/=</td><td>Division assignment</td></tr>
+            <tr><td>%=</td><td>Modulus assignment</td></tr>
         </tbody>
     </table>
 </html>
 
+## Switch Operator
 
+자바 12 부터 추가된 연산자로 기존 Switch statement 는 유효하고, Switch operator 가 추가된 것이다.  
+연산자이기 때문에 결과값을 반환할 수 있다.  
+또한 자바 13 부터는 yield 키워드가 추가 되었다.  
+
+현재 자바 12 와 13 이 설치되어 있지 않아 예제는 작성하지 못했다.  
+추후 설치하고 예제도 작성해보며 Switch statement 의 변경된 내용과 operator 에 대해서 공부할 예정이다.   
+
+## 추가로..
 
 #### 두 정수의 중간값 구하기
 
